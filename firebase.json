@@ -4,7 +4,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "dist/billingsoftware/index.html",
+    "public": "dist/billingsoftware",
     "ignore": [
       "firebase.json",
       "**/.*",
