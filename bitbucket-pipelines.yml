@@ -8,12 +8,7 @@ pipelines:
   branches:
     master:
       - step:
-          name: 'Build'
-          script:
-            - echo "starting the build"
-      - step:
           name: 'Build and Deploy'
-          trigger: 'manual'
           caches:
             - node
           deployment: production
