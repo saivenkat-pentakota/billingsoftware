@@ -5,25 +5,26 @@
 image: node:14.16.0
 
 pipelines:
-  default:
-    - step:
-        name: 'Build'
-        script:
-          - echo "starting the build"
-    - step:
-        name: 'Build and Deploy'
-        trigger: 'manual'
-        caches:
-          - node
-        deployment: production
-        artifacts:
-          - dist/**
-        script:
-          - npm install
-          - npm run build:prod
-          - pipe: atlassian/firebase-deploy:1.1.0
-            variables:
-              FIREBASE_TOKEN: "1//0gQw8mBXBrbGsCgYIARAAGBASNwF-L9IrobPac0uimdCr9EG0Y9pmvY3RbxOUpgzzvuXWe96epOIQqGdXP-LY4g5yoCq2995n70I"
+  branches:
+    master:
+      - step:
+          name: 'Build'
+          script:
+            - echo "starting the build"
+      - step:
+          name: 'Build and Deploy'
+          trigger: 'manual'
+          caches:
+            - node
+          deployment: production
+          artifacts:
+            - dist/**
+          script:
+            - npm install
+            - npm run build:prod
+            - pipe: atlassian/firebase-deploy:1.1.0
+              variables:
+                FIREBASE_TOKEN: "1//0gQw8mBXBrbGsCgYIARAAGBASNwF-L9IrobPac0uimdCr9EG0Y9pmvY3RbxOUpgzzvuXWe96epOIQqGdXP-LY4g5yoCq2995n70I"
 
 
 
