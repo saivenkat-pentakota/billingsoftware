@@ -8,6 +8,7 @@ pipelines:
   default:
     - step:
         name: 'Build and Deploy'
+        trigger: manual
         caches:
           - node
         deployment: production
