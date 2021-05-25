@@ -11,6 +11,5 @@ pipelines:
         script:
           - npm install
           - npm run build:prod
-          - npm run deploy
           - firebase deploy --token=$FIREBASE_TOKEN --project project-name-firebase --non-interactive
 
