@@ -7,8 +7,12 @@ image: node:14.16.0
 pipelines:
   default:
     - step:
+        name: 'Build'
+        script:
+          - echo "starting the build"
+    - step:
         name: 'Build and Deploy'
-        trigger: manual
+        trigger: 'manual'
         caches:
           - node
         deployment: production
