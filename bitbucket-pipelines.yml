@@ -2,29 +2,15 @@
 # Use a skeleton to build, test and deploy using manual and parallel steps
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
-image: atlassian/default-image:2
+image: node:14.16.0
 
 pipelines:
   default:
-    - parallel:
-      - step:
-          name: 'Test'
-          script:
-            - npm install && npm test
-      - step:
-          name: 'Build'
-          script:
-            - npm install && npm run build
-          artifacts:
-            - build/**
-
-    # The following deployment steps will be executed for each pipeline run. To configure your steps and conditionally deploy see https://support.atlassian.com/bitbucket-cloud/docs/configure-bitbucket-pipelinesyml/
     - step:
-        name: 'Deployment to Firebase'
-        deployment: production
+        name: 'Build and Deploy'
         script:
-          - pipe: atlassian/firebase-deploy:1.1.0
-            variables:
-              FIREBASE_TOKEN: $FIREBASE_TOKEN
-              PROJECT_ID: $PROJECT_ID
-            
+          - npm install
+          - npm run build:prod
+          - npm run deploy
+          - firebase deploy --token=$FIREBASE_TOKEN --project project-name-firebase --non-interactive
+
