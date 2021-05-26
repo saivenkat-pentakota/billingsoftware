@@ -20,7 +20,6 @@ pipelines:
             - pipe: atlassian/firebase-deploy:1.1.0
               variables:
                 FIREBASE_TOKEN: $FIREBASE_TOKEN
-                PROJECT_ID: $FIREBASE_PROJECT
     release/*:
       - step:
           name: 'Build and Deploy'
