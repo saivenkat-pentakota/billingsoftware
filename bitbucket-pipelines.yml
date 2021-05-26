@@ -17,9 +17,22 @@ pipelines:
           script:
             - npm install
             - npm run build:prod
+            - firebase use default
             - pipe: atlassian/firebase-deploy:1.1.0
               variables:
-                FIREBASE_TOKEN: "1//0gQw8mBXBrbGsCgYIARAAGBASNwF-L9IrobPac0uimdCr9EG0Y9pmvY3RbxOUpgzzvuXWe96epOIQqGdXP-LY4g5yoCq2995n70I"
-
-
-
+                FIREBASE_TOKEN: $FIREBASE_TOKEN
+    release:
+      - step:
+          name: 'Build and Deploy'
+          caches:
+            - node
+          deployment: staging
+          artifacts:
+            - dist/**
+          script:
+            - npm install
+            - npm run build
+            - firebase use staging
+            - pipe: atlassian/firebase-deploy:1.1.0
+              variables:
+                FIREBASE_TOKEN: $FIREBASE_TOKEN_INIT
