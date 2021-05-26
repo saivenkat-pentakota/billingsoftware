@@ -8,6 +8,9 @@
       "hosting": {
         "staging": [
           "billingsoftware17a-init"
+        ],
+        "production": [
+          "billingsoftware17"
         ]
       }
     }
