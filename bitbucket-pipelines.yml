@@ -32,7 +32,5 @@ pipelines:
           script:
             - npm install
             - npm run build
-            - pipe: atlassian/firebase-deploy:1.1.0
-              variables:
-                FIREBASE_TOKEN: $FIREBASE_TOKEN_INIT
-                PROJECT_ID: $FIREBASE_PROJECT_INIT
+            - npm run staging
+            - npm run deploy
