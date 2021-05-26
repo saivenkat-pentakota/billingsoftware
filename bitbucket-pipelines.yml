@@ -34,4 +34,4 @@ pipelines:
             - npm install
             - npm run build
             - firebase use staging
-            - firebase deploy --only hosting:staging --token "$FIREBASE_TOKEN"
+            - firebase deploy --only hosting:staging --token $FIREBASE_TOKEN
