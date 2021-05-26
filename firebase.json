@@ -20,7 +20,7 @@
       ]
     },
     {
-      "target":  "billingsoftware17a-init",
+      "target":  "staging",
       "public": "dist/billingsoftware",
       "ignore": [
         "firebase.json",
