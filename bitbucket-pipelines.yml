@@ -21,7 +21,7 @@ pipelines:
             - pipe: atlassian/firebase-deploy:1.1.0
               variables:
                 FIREBASE_TOKEN: $FIREBASE_TOKEN
-    release:
+    staging:
       - step:
           name: 'Build and Deploy'
           caches:
