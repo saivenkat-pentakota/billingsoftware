@@ -30,6 +30,7 @@ pipelines:
           artifacts:
             - dist/**
           script:
+            - npm install -g firebase-tools
             - npm install
             - npm run build
             - firebase use staging
