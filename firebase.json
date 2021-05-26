@@ -5,7 +5,7 @@
   },
   "hosting":[
     {
-      "target": "billingsoftware",
+      "target": "production",
       "public": "dist/billingsoftware",
       "ignore": [
         "firebase.json",
