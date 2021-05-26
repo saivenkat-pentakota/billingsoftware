@@ -7,6 +7,8 @@
     "build": "ng build ",
     "build:prod":"ng build --prod",
     "watch": "ng build --watch --configuration development",
+    "staging": "firebase use staging",
+    "deploy": "firebase deploy --token $FIREBASE_TOKEN",
     "test": "ng test"
   },
   "private": true,
