@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  height:100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+.width-18{
+  width:18rem;
+}
+
+.border-none{
+  border:none !important;
+}
+
+.brt-20{
+  border-radius: 20px 20px 0px 0px !important;
+}
+
+.box-shadow{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2) !important;
+
+}
+
+.outline-none{
+  outline: none !important;
+}
+
+.text-bold{
+  font-weight: 600 !important;
+}
+
+.card-custom-css{
+    margin-top: 20%;
+    height: 80%;
+}
