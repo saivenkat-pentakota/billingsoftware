@@ -4,16 +4,16 @@
 
 export const environment = {
   production: false,
-  primaryFirebaseConfig : {
-    apiKey: "",
-    authDomain: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: "",
-    measurementId: ""
+  primaryFirebaseConfig: {
+    apiKey: "AIzaSyA3uvn6e5RDED9vBP7oVyPrXW6c9sWfE5w",
+    authDomain: "billing17a.firebaseapp.com",
+    projectId: "billing17a",
+    storageBucket: "billing17a.appspot.com",
+    messagingSenderId: "755981449326",
+    appId: "1:755981449326:web:8be7ba4365002ca3e2ce7f",
+    measurementId: "G-WJ2202Y952"
   },
-  secondaryFirebaseConifg:{
+  secondaryFirebaseConifg: {
     apiKey: "",
     authDomain: "",
     projectId: "",
