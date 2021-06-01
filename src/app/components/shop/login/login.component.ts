@@ -13,7 +13,6 @@ export class LoginComponent implements OnInit {
   phoneNumber:any;
 
   constructor(public router:Router,public authService:AuthService) {
-    firebase.initializeApp(environment.primaryFirebaseConfig);
    }
 
   ngOnInit(): void {

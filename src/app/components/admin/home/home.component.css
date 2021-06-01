@@ -1,0 +1,15 @@
+.body{
+  height:95%;
+}
+
+a i{
+  color:lightgray;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.active i{
+  color: #808080;
+}
+
+
