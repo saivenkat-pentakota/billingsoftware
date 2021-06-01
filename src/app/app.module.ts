@@ -1,3 +1,6 @@
+import { HomeComponent as shophome } from './components/shop/home/home.component';
+import { OtpComponent as shopotp } from './components/shop/otp/otp.component';
+import { LoginComponent as shoplogin } from './components/shop/login/login.component';
 import { AuthService } from './service/user/auth.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,7 +22,10 @@ import { HomeComponent } from './components/user/home/home.component';
     AppComponent,
     LoginComponent,
     OtpComponent,
-    HomeComponent
+    HomeComponent,
+    shoplogin,
+    shophome,
+    shopotp
   ],
   imports: [
     BrowserModule,
