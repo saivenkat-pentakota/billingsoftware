@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   primaryFirebaseConfig: {
-    apiKey: "AIzaSyA3uvn6e5RDED9vBP7oVyPrXW6c9sWfE5w",
-    authDomain: "billing17a.firebaseapp.com",
-    projectId: "billing17a",
-    storageBucket: "billing17a.appspot.com",
-    messagingSenderId: "755981449326",
-    appId: "1:755981449326:web:8be7ba4365002ca3e2ce7f",
-    measurementId: "G-WJ2202Y952"
+    apiKey: "AIzaSyBmO0-ghNmWbWvrFnupBART3pGfFoP-sKw",
+    authDomain: "billingsoftware17.firebaseapp.com",
+    projectId: "billingsoftware17",
+    storageBucket: "billingsoftware17.appspot.com",
+    messagingSenderId: "885472757410",
+    appId: "1:885472757410:web:6b421480464cd1dffdb9fb",
+    measurementId: "G-NZVZLX2WMV"
   },
   secondaryFirebaseConifg: {
     apiKey: "",
