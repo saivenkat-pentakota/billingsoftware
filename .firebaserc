@@ -1,9 +1,20 @@
 {
   "projects": {
     "default": "billingsoftware17",
-    "staging": "billingsoftware17a-init"
+    "staging": "billingsoftware17a-init",
+    "production": "billingsoftware17"
   },
   "targets": {
+    "billingsoftware17": {
+      "hosting": {
+        "staging": [
+          "billingsoftware17a-init"
+        ],
+        "production": [
+          "billingsoftware17"
+        ]
+      }
+    },
     "billingsoftware17a-init": {
       "hosting": {
         "staging": [
