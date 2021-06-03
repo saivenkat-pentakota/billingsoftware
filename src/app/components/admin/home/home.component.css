@@ -1,5 +1,7 @@
 .body{
-  height:95%;
+  height: 89%;
+  padding: 1rem;
+  border-bottom: 1px solid lightgray;
 }
 
 a i{

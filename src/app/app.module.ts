@@ -29,6 +29,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
+import { ProductsComponent } from './components/admin/products/products.component';
+import { NotificationsComponent } from './components/admin/notifications/notifications.component';
+import { ProfileComponent } from './components/admin/profile/profile.component';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { ProductComponent } from './components/admin/product/product.component';
+import { AddproductComponent } from './components/admin/addproduct/addproduct.component';
 
 
 @NgModule({
@@ -42,7 +48,13 @@ import { environment } from 'src/environments/environment';
     shopotp,
     adminhome,
     adminotp,
-    adminlogin
+    adminlogin,
+    ProductsComponent,
+    NotificationsComponent,
+    ProfileComponent,
+    DashboardComponent,
+    ProductComponent,
+    AddproductComponent
   ],
   imports: [
     BrowserModule,
