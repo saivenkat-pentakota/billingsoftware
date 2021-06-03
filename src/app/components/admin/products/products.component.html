@@ -1,0 +1,14 @@
+<div class="form-group has-search">
+  <span class="fa fa-search form-control-feedback"></span>
+  <input type="text" class="form-control" placeholder="Search products">
+</div>
+<div class="products">
+<app-product></app-product>
+</div>
+<div class="plus" (click)="controller.openProductPanel()">
+  <a><i class="fa fa-archive" aria-hidden="true"></i></a>
+</div>
+<div  *ngIf="controller.checkProductPanel()" class="product-pannel">
+  <app-addproduct></app-addproduct>
+</div>
+

@@ -17,7 +17,7 @@ body{
 }
 
 .box-shadow{
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2) !important;
+  box-shadow: 0 2px 7px 0 rgb(0 0 0 / 20%) !important;
 
 }
 
@@ -46,3 +46,20 @@ body{
     border-radius: 0 !important;
   }
  }
+ .navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 2rem;
+}
+
+.f-20{
+  font-size: 20px;
+}
+
+.f-30{
+  font-size: 30px;
+}
+
