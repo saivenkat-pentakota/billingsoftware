@@ -63,3 +63,7 @@ body{
   font-size: 30px;
 }
 
+.position-fixed{
+  position: fixed !important;
+}
+

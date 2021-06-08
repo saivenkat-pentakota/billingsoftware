@@ -1,27 +1,39 @@
   <form class="panel p-2 m-2">
+    <div class="row m-1">
+      <div class="col">
+       <span class="text-white">Product Id</span>
+        <input [(ngModel)]="productId" name="productId" type="text" class="form-control" autocomplete="off" placeholder="Product Id">
+      </div>
+      </div>
   <div class="row m-1">
     <div class="col">
      <span class="text-white">Product Name</span>
-      <input type="text" class="form-control" placeholder="Product Name">
+      <input [(ngModel)]="productName" name="productName" type="text" class="form-control" autocomplete="off" placeholder="Product Name">
     </div>
     </div>
     <div class="row m-1">
       <div class="col">
-        <span class="text-white">Category</span>
-        <input type="text" class="form-control" placeholder="Category">
+       <span class="text-white">Description</span><br>
+        <textarea [(ngModel)]="productDescription" name="productDescription" placeholder="product description"  autocomplete="off" cols="35" rows="5"></textarea>
+      </div>
+      </div>
+    <div class="row m-1">
+      <div class="col">
+        <span class="text-white">Category Id</span>
+        <input [(ngModel)]="categoryId" name="categoryId" type="text" class="form-control" placeholder="Category" autocomplete="off" >
       </div>
       <div class="col ">
         <span class="text-white">Price</span>
-        <input type="text" class="form-control" placeholder="price">
+        <input [(ngModel)]="price" name="price" type="text" class="form-control" placeholder="price" autocomplete="off" >
       </div>
     </div>
   <div class="form-group m-3">
     <label for="exampleFormControlFile1" class="text-white">Add product Image</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    <input [(ngModel)]="imageurl" name="imageurl" type="file" class="form-control-file"  (change)="onFileSelected($event)" autocomplete="off" id="exampleFormControlFile1">
   </div>
   <div class="mx-2">
-  <button type="button" (click)="controller.closeProductPanel()" class="btn btn-secondary btn-lg m-1 px-5">Close</button>
-  <button type="button" class="btn btn-primary btn-lg m-1 px-5">Add</button>
+  <button type="button" (click)="controller.closeProductPanel()" class="btn btn-secondary btn-lg m-2">Close</button>
+  <button type="button" (click) = "createProduct()" class="btn btn-primary btn-lg m-2">Add</button>
 </div>
 </form>
 

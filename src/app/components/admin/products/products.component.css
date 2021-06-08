@@ -40,10 +40,20 @@
 .product-pannel{
   background-color: #808080;
   position: absolute;
+  overflow: hidden;
+  overflow-y: scroll;
   bottom: 0;
-  height: 50%;
+  height: 100%;
   width: 100%;
   left: 0;
   z-index: 100000;
-  border-radius: 20px 20px 0 0;
+}
+
+.plusicon{
+  font-size: 25px;
+    position: absolute;
+    right: 12px;
+    bottom: 2px;
+    font-weight: 600;
+    color: white;
 }

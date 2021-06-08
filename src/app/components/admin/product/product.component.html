@@ -1,18 +1,20 @@
 <div class="product box-shadow" >
   <div class="product-image">
-    <img src="https://5.imimg.com/data5/BN/OL/GLADMIN-39053171/good-day-biscuit-250x250.png">
+    <img [src]="product.imageurl">
   </div>
   <div class="product-description">
-      <div class="product-name">
-        <span class="f-20">goodday bisucuts</span>
+      <div class="product-name productname">
+        <span class="f-20">{{product.productName}}</span>
+        <i class="fa fa-pencil edit " (click)="controller.openUpdateProductPanel(product)" aria-hidden="true"></i>
+        <i class="fa fa-trash delete" (click)="controller.deleteproduct(product.productId)"aria-hidden="true" ></i>
       </div>
       <div class="product-details">
-        <div class="product-code-rating">
-          <span>#123567</span><br>
-          <span class="f-10">Category</span>
+        <div class="product-code-rating details">
+          <span>#{{product.productId}}</span><br>
+          <span class="f-10">{{product.categoryId}}</span>
         </div>
         <div class="product-price">
-          <span>Rs:120</span>
+          <span>Rs:{{product.price}}</span>
         </div>
     </div>
   </div>

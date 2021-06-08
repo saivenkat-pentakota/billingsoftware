@@ -1,3 +1,5 @@
+import { AngularFireList } from '@angular/fire/database';
+import { Product } from './../../../models/admin/product.model';
 import { ControllerService } from './../../../service/admin/controller.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(public controller:ControllerService) { }
+  products : Product[];
+
+  constructor(public controller:ControllerService) {
+    this.products  = [];
+    this.controller.getProducts().valueChanges().subscribe((values) => {
+      this.products = values;
+    });
+  }
 
   ngOnInit(): void {
   }

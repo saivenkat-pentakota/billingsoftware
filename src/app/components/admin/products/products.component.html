@@ -3,12 +3,19 @@
   <input type="text" class="form-control" placeholder="Search products">
 </div>
 <div class="products">
-<app-product></app-product>
+  <ng-container *ngFor="let product of products">
+    <app-product [product]="product"></app-product>
+  </ng-container>
 </div>
 <div class="plus" (click)="controller.openProductPanel()">
-  <a><i class="fa fa-archive" aria-hidden="true"></i></a>
+  <a><i class="fa fa-archive" aria-hidden="true"></i><span class="plusicon">
+    +
+  </span></a>
 </div>
 <div  *ngIf="controller.checkProductPanel()" class="product-pannel">
   <app-addproduct></app-addproduct>
+</div>
+<div  *ngIf="controller.checkUpdateProductPanel()" class="product-pannel">
+  <app-updateproduct></app-updateproduct>
 </div>
 
