@@ -12,6 +12,7 @@
 .product-image img{
   width:100%;
   height:100%;
+  padding: 10px;
 }
 .product-description{
   flex:3;
@@ -27,6 +28,36 @@
 
 .product-price{
   flex:1;
+  color: red;
+    font-size: larger;
+    font-weight: 500;
 }
 
+.productname{
+   color: blue;
+    font-weight: 600;
+    font-size: 25px;
+    flex:3;
+}
 
+.delete{
+  flex: 1;
+  right: 25px;
+  font-size: 15px;
+  margin-top: 10px;
+  position: absolute;
+  color: gray;
+}
+
+.edit{
+  flex: 1;
+  right: 45px;
+  font-size: 15px;
+  margin-top: 10px;
+  position: absolute;
+  color: gray;
+}
+
+.details{
+  font-size: smaller;
+}

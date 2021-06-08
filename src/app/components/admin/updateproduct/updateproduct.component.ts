@@ -1,16 +1,16 @@
 import { Product } from 'src/app/models/admin/product.model';
 import { ControllerService } from './../../../service/admin/controller.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AngularFireStorage } from "@angular/fire/storage";
 import { map, finalize } from "rxjs/operators";
 
 @Component({
-  selector: 'app-addproduct',
-  templateUrl: './addproduct.component.html',
-  styleUrls: ['./addproduct.component.css']
+  selector: 'app-updateproduct',
+  templateUrl: './updateproduct.component.html',
+  styleUrls: ['./updateproduct.component.css']
 })
-export class AddproductComponent implements OnInit {
+export class UpdateproductComponent implements OnInit {
 
   productId:any;
   productName:any;
@@ -19,27 +19,34 @@ export class AddproductComponent implements OnInit {
   price:any;
   product:Product;
   imageurl:any;
+  productImageUrl:any;
   selectedFile: File ;
   fb:any;
   downloadURL: Observable<string> | undefined;
-
+  showupload = false;
 
   constructor(public controller:ControllerService, private storage: AngularFireStorage) {
     this.product= new Product();
+    this.productId = this.controller.updateProduct.productId;
+    this.productName = this.controller.updateProduct.productName;
+    this.productDescription = this.controller.updateProduct.description;
+    this.categoryId = this.controller.updateProduct.categoryId;
+    this.price = this.controller.updateProduct.price;
+    this.productImageUrl = this.controller.updateProduct.imageurl;
     this.selectedFile= {} as File;
    }
 
   ngOnInit(): void {
   }
 
-  createProduct(){
+  updateProduct(){
     this.product.setproductId(this.productId);
     this.product.setproductName(this.productName);
     this.product.setdescription(this.productDescription);
     this.product.setcategoryId(this.categoryId);
     this.product.setprice(this.price);
     this.product.setimagename(this.selectedFile.name)
-    this.controller.createproduct(this.product);
+    this.controller.updateproduct(this.product);
   }
 
   onFileSelected(event:any) {
@@ -70,4 +77,5 @@ export class AddproductComponent implements OnInit {
         this.controller.hideSpinner();
       });
   }
+
 }
