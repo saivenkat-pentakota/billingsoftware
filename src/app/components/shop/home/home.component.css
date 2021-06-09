@@ -1,0 +1,17 @@
+.body{
+  height: 89%;
+  padding: 1rem;
+  border-bottom: 1px solid lightgray;
+}
+
+a i{
+  color:lightgray;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.active i{
+  color: #808080;
+}
+
+

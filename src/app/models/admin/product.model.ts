@@ -1,76 +1,83 @@
-export class Product {
-  private productId:string;
-  private productName:string;
-  private description:string;
-  private categoryId: string;
-  private price:string;
-  private imageurl: string;
-  private imagename:string;
+import { ControllerService } from 'src/app/service/admin/controller.service';
 
-  constructor(){
+export class Product {
+  private productUUID = ControllerService.generateUUID();
+  private productId: string;
+  private productName: string;
+  private description: string;
+  private categoryId: string;
+  private price: string;
+  private imageurl: string;
+  private imagename: string;
+
+  constructor() {
     this.productName = "";
     this.productId = "";
     this.description = "";
-    this.categoryId ="";
-    this.price ="";
+    this.categoryId = "";
+    this.price = "";
     this.imageurl = "";
-    this.imagename="";
+    this.imagename = "";
 
   }
-//setters
-  setproductId(productId:any){
+  //setters
+  setproductId(productId: any) {
     this.productId = productId;
   }
 
-  setproductName(productName:any){
+  setproductName(productName: any) {
     this.productName = productName;
   }
 
-  setdescription(description:any){
+  setdescription(description: any) {
     this.description = description;
   }
 
-  setcategoryId(categoryId:any){
+  setcategoryId(categoryId: any) {
     this.categoryId = categoryId;
   }
 
-  setprice(price:any){
+  setprice(price: any) {
     this.price = price;
   }
 
-  setimageurl(imageurl:any){
+  setimageurl(imageurl: any) {
     this.imageurl = imageurl;
   }
 
-  setimagename(imagename:any){
+  setimagename(imagename: any) {
     this.imagename = imagename;
   }
-//getters
-  getproductId(){
+  //getters
+  getproductUUID() {
+    return this.productUUID;
+  }
+
+  getproductId() {
     return this.productId;
   }
 
-  getproductName(){
+  getproductName() {
     return this.productName;
   }
 
-  getdescription(){
+  getdescription() {
     return this.description;
   }
 
-  getcategoryId(){
+  getcategoryId() {
     return this.categoryId;
   }
 
-  getprice(){
+  getprice() {
     return this.price;
   }
 
-  getimageurl(){
+  getimageurl() {
     return this.imageurl;
   }
 
-  getimagename(){
+  getimagename() {
     return this.imagename;
   }
 
