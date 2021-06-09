@@ -32,10 +32,10 @@
 
 .products{
   position: absolute;
-    overflow: hidden;
-    overflow-y: scroll;
-    height: 80%;
-    margin-right: 5%;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 80%;
+  margin-right: 5%;
 }
 
 .product-pannel{

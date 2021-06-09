@@ -14,7 +14,7 @@
   <div class="row m-1">
     <div class="col">
      <span class="text-white">Description</span><br>
-      <textarea [(ngModel)]="productDescription" name="productDescription" placeholder="product description"  autocomplete="off" cols="35" rows="3"></textarea>
+      <textarea [(ngModel)]="productDescription" name="productDescription" placeholder="product description"  autocomplete="off" cols="35" rows="5"></textarea>
     </div>
     </div>
   <div class="row m-1">
@@ -27,19 +27,13 @@
       <input [(ngModel)]="price" name="price" type="text" class="form-control" placeholder="price" autocomplete="off" >
     </div>
   </div>
-<div class="form-group m-3" *ngIf = "showupload">
+<div class="form-group m-3">
   <label for="exampleFormControlFile1" class="text-white">Add product Image</label>
-  <input [(ngModel)]="imageurl" id="productimage" name="imageurl" type="file" class="form-control-file"  (change)="onFileSelected($event)" autocomplete="off" id="exampleFormControlFile1">
-</div>
-<div class="form-group m-3" *ngIf = "!showupload">
-  <button for="exampleFormControlFile1" type="button" class="text-white btn btn-primary mb-3" (click)="showupload = true">Update Image</button>
- <div >
-  <img [src]="productImageUrl" class="img-thumbnail" >
-</div>
+  <input [(ngModel)]="imageurl" name="imageurl" type="file" class="form-control-file"  (change)="onFileSelected($event)" autocomplete="off" id="exampleFormControlFile1">
 </div>
 <div class="mx-2">
-<button type="button" (click)="controller.closeUpdateProductPanel()" class="btn btn-secondary btn-lg m-2 ">Close</button>
-<button type="button" (click) = "updateProduct()" class="btn btn-primary btn-lg m-2">Update</button>
+<button type="button" (click)="controller.closeProductPanel()" class="btn btn-secondary btn-lg m-2">Close</button>
+<button type="button" (click) = "createProduct()" class="btn btn-primary btn-lg m-2">Add</button>
 </div>
 </form>
 

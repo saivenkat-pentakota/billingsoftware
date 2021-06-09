@@ -1,1 +1,25 @@
-<p>shophome works!</p>
+<div class="card width-18 border-none box-shadow mx-auto card-custom-css ">
+  <div class="card-body" style="padding: 0;">
+    <div class="body">
+      <div *ngIf="controller.activeComponent==1">
+        <app-shopdashboard></app-shopdashboard>
+      </div>
+      <div *ngIf="controller.activeComponent==2">
+        <app-shopproducts></app-shopproducts>
+      </div>
+      <div *ngIf="controller.activeComponent==3">
+        <app-shopnotifications></app-shopnotifications>
+      </div>
+      <div *ngIf="controller.activeComponent==4">
+        <app-shopprofile></app-shopprofile>
+      </div>
+
+    </div>
+    <div class="navbar">
+      <a [ngClass]="{'active': controller.activeComponent==1}" (click)=" controller.activeComponent=1"><i class="fa fa-pie-chart"></i> </a>
+      <a [ngClass]="{'active': controller.activeComponent==2}" (click)=" controller.activeComponent=2"><i class="fa fa-archive"></i> </a>
+      <a [ngClass]="{'active': controller.activeComponent==3}" (click)=" controller.activeComponent=3"><i class="fa fa-bell"></i> </a>
+      <a [ngClass]="{'active': controller.activeComponent==4}" (click)=" controller.activeComponent=4"><i class="fa fa-user"></i> </a>
+    </div>
+  </div>
+</div>

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-otp',
+  selector: 'app-shopotp',
   templateUrl: './otp.component.html',
   styleUrls: ['./otp.component.css']
 })

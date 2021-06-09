@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
-import * as firebase from 'firebase/app';
+import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -34,8 +34,8 @@ export class AuthService {
   }
 
   initializeWindowRef(){
-    this.windowRefr = this.windowRef;
-    this.windowRef.recaptchaVerifier= new firebase.default.auth.RecaptchaVerifier('recaptcha-container',{
+     this.windowRefr = this.windowRef;
+     this.windowRef.recaptchaVerifier= new firebase.default.auth.RecaptchaVerifier('recaptcha-container',{
       'size': 'invisible',
       'callback': () => {
         // reCAPTCHA solved, allow signInWithPhoneNumber.

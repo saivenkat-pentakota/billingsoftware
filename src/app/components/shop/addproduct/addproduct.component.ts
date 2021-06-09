@@ -6,7 +6,7 @@ import { AngularFireStorage } from "@angular/fire/storage";
 import { map, finalize } from "rxjs/operators";
 
 @Component({
-  selector: 'app-addproduct',
+  selector: 'app-shopaddproduct',
   templateUrl: './addproduct.component.html',
   styleUrls: ['./addproduct.component.css']
 })
@@ -42,7 +42,7 @@ export class AddproductComponent implements OnInit {
     this.controller.createproduct(this.product);
   }
 
-   async onFileSelected(event:any) {
+  async onFileSelected(event:any) {
     this.controller.showSpinner();
     this.selectedFile = event.target.files[0];
     this.product.setimagename(this.selectedFile.name);
@@ -52,13 +52,13 @@ export class AddproductComponent implements OnInit {
     task
       .snapshotChanges()
       .pipe(
-        finalize(async () => {
+        finalize(async() => {
           this.downloadURL = fileRef.getDownloadURL();
           await this.downloadURL.subscribe(url => {
             if (url) {
               this.fb = url;
-              this.product.setimageurl(url);
             }
+            this.product.setimageurl(this.fb);
             this.controller.hideSpinner();
           });
         })

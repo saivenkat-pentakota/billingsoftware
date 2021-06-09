@@ -1,16 +1,16 @@
 import { Product } from 'src/app/models/admin/product.model';
 import { ControllerService } from './../../../service/admin/controller.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AngularFireStorage } from "@angular/fire/storage";
 import { map, finalize } from "rxjs/operators";
 
 @Component({
-  selector: 'app-addproduct',
-  templateUrl: './addproduct.component.html',
-  styleUrls: ['./addproduct.component.css']
+  selector: 'app-shopupdateproduct',
+  templateUrl: './updateproduct.component.html',
+  styleUrls: ['./updateproduct.component.css']
 })
-export class AddproductComponent implements OnInit {
+export class UpdateproductComponent implements OnInit {
 
   productId:any;
   productName:any;
@@ -19,32 +19,44 @@ export class AddproductComponent implements OnInit {
   price:any;
   product:Product;
   imageurl:any;
+  productImageUrl:any;
+  imageName:any;
   selectedFile: File ;
   fb:any;
   downloadURL: Observable<string> | undefined;
-
+  showupload = false;
 
   constructor(public controller:ControllerService, private storage: AngularFireStorage) {
     this.product= new Product();
+    Object.assign(this.product,this.controller.updateProduct);
+    this.productId = this.controller.updateProduct.productId;
+    this.productName = this.controller.updateProduct.productName;
+    this.productDescription = this.controller.updateProduct.description;
+    this.categoryId = this.controller.updateProduct.categoryId;
+    this.price = this.controller.updateProduct.price;
+    this.productImageUrl = this.controller.updateProduct.imageurl;
+    this.imageName = this.controller.updateProduct.imagename;
     this.selectedFile= {} as File;
    }
 
   ngOnInit(): void {
   }
 
-  createProduct(){
+  updateProduct(){
     this.product.setproductId(this.productId);
     this.product.setproductName(this.productName);
     this.product.setdescription(this.productDescription);
     this.product.setcategoryId(this.categoryId);
     this.product.setprice(this.price);
-    this.product.setimagename(this.selectedFile.name)
-    this.controller.createproduct(this.product);
+    this.product.setimagename(this.imageName);
+    this.product.setimageurl(this.productImageUrl);
+    this.controller.updateproduct(this.product);
   }
 
-   async onFileSelected(event:any) {
+  onFileSelected(event:any) {
     this.controller.showSpinner();
     this.selectedFile = event.target.files[0];
+    this.imageName = this.selectedFile.name;
     this.product.setimagename(this.selectedFile.name);
     const filePath = `ProductImages/${this.product.getproductUUID()}`;
     const fileRef = this.storage.ref(filePath);
@@ -52,13 +64,14 @@ export class AddproductComponent implements OnInit {
     task
       .snapshotChanges()
       .pipe(
-        finalize(async () => {
+        finalize(() => {
           this.downloadURL = fileRef.getDownloadURL();
-          await this.downloadURL.subscribe(url => {
+          this.downloadURL.subscribe(url => {
             if (url) {
               this.fb = url;
-              this.product.setimageurl(url);
             }
+            this.product.setimageurl(this.fb);
+            this.productImageUrl = this.fb;
             this.controller.hideSpinner();
           });
         })
@@ -70,4 +83,5 @@ export class AddproductComponent implements OnInit {
         this.controller.hideSpinner();
       });
   }
+
 }
